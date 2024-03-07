@@ -55,12 +55,37 @@ void Calculator() {
 	cin.get(); cin.get();
 }
 
+void Problem1() {
+	int age;
+	cout << "Zadej svuj vek: "; cin >> age;
+	cout << "Je ti " << age << " let." << endl;
+	cin.get(); cin.get();
+}
+
+void Problem2() {
+	int inputNumber;
+	cout << "Zadejte cislo: "; cin >> inputNumber;
+	cout << "Druha mocnina je " << inputNumber * inputNumber << endl;
+	cin.get(); cin.get();
+}
+
+void Problem3() {
+	float pi = 3.1415f;
+	float radius;
+	cout << "Zadejte polomer: "; cin >> radius;
+	cout << "Obvod kruhu je: " << 2 * pi * radius << " a jeho obsah je " << pi * radius * radius << "cm2" << endl;
+	cin.get(); cin.get();
+}
+
 int main(void) {
 	//helloWorld();
 	//WriteOutInt();
 	//WriteOutFloat();
 	//RepeatString();
 	//Multiplyer();
-	Calculator();
+	//Calculator();
+	//Problem1();
+	//Problem2();
+	//Problem3();
 	return 0;
 }
