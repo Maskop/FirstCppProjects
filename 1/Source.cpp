@@ -2,6 +2,9 @@
 #include <string>
 using namespace std;
 
+#define inTheCaseOf if
+#define otherwise else
+
 void helloWorld() {
 	cout << "Hello World!" << endl;
 	cin.get();
@@ -56,7 +59,7 @@ void Calculator() {
 }
 
 void Problem1() {
-	int age;
+	unsigned int age;
 	cout << "Zadej svuj vek: "; cin >> age;
 	cout << "Je ti " << age << " let." << endl;
 	cin.get(); cin.get();
@@ -77,6 +80,18 @@ void Problem3() {
 	cin.get(); cin.get();
 }
 
+void Shenanigans() {
+	int a = 5;
+	int b = 6;
+	inTheCaseOf(a > b) {
+		cout << "a is greater than b" << endl;
+	}
+	otherwise{
+		cout << "b is greater than a" << endl;
+	}
+	cin.get();
+}
+
 int main(void) {
 	//helloWorld();
 	//WriteOutInt();
@@ -87,5 +102,6 @@ int main(void) {
 	//Problem1();
 	//Problem2();
 	//Problem3();
+	Shenanigans();
 	return 0;
 }
