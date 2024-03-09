@@ -145,10 +145,19 @@ void CalculatorWithSwitch() {
 	}
 }
 
-void ArrayTest() {
+void ArrayTestAndPointers() {
 	int numbers[12] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 11, 12 };
+	random_shuffle(begin(numbers), end(numbers));
 	int c = count(begin(numbers), end(numbers), 7);
-	cout << "Number of 12s in the array: " << c << endl;
+	cout << "Number of 7s in the array: " << c << endl;
+	int *max = max_element(begin(numbers), end(numbers));
+	cout << "Max number in the array: " << *max << endl;
+	cout << numbers + 6 << endl;
+	cout << "what is max? " << max << endl;
+	sort(begin(numbers), end(numbers));
+	for (int i = 0; i < 12; i++) {
+		cout << numbers[i] << " ";
+	}
 	cin.get();
 }
 
@@ -165,6 +174,6 @@ int main(void) {
 	//Shenanigans();
 	//CalculateSquareRoot();
 	//CalculatorWithSwitch();
-	ArrayTest();
+	ArrayTestAndPointers();
 	return 0;
 }
