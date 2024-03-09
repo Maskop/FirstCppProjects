@@ -173,14 +173,18 @@ void CesarsCode() {
 	int shiftBy;
 	cout << "Input text, that you want to convert: ";
 	getline(cin, text);
-	cout << "Enter a number between -26 and 26: ";
 	do {
+		cout << "Enter a number between -26 and 26: ";
 		cin >> shiftBy;
-	} while ((shiftBy <= -26) && (shiftBy >= 26));
+	} while ((shiftBy < -26) || (shiftBy > 26));
+
 	for (int i = text.length(); i >= 0; i--) {
-		text[i] = text[i] + shiftBy;
+		cout << (int)(text[i] + shiftBy) << ' ';
+		if (text[i] != ' ') {
+			text[i] = text[i] + shiftBy;
+		}
 	}
-	cout << text << endl;
+	cout << endl << text << endl;
 	cin.get();
 }
 
