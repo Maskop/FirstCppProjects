@@ -161,6 +161,13 @@ void ArrayTestAndPointers() {
 	cin.get();
 }
 
+void GimmiLineMotherfucker() {
+	string input;
+	cout << "Enter your name: "; getline(cin, input);
+	cout << "Hi " << input;
+	cin.get();
+}
+
 int main(void) {
 	//helloWorld();
 	//WriteOutInt();
@@ -174,6 +181,7 @@ int main(void) {
 	//Shenanigans();
 	//CalculateSquareRoot();
 	//CalculatorWithSwitch();
-	ArrayTestAndPointers();
+	//ArrayTestAndPointers();
+	GimmiLineMotherfucker();
 	return 0;
 }
