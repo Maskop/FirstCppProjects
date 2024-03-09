@@ -18,8 +18,5 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Functions.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
