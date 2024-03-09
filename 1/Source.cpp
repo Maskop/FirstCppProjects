@@ -188,6 +188,38 @@ void CesarsCode() {
 	cin.get();
 }
 
+void CesarsCodeV2() {
+	string alphabet = "abcdefghijklmnopqrstuvwxyz";
+	string text;
+	int shiftBy;
+	cout << "Input text, that you want to convert: ";
+	getline(cin, text);
+	do {
+		cout << "Enter a number between -26 and 26: ";
+		cin >> shiftBy;
+	} while ((shiftBy < -26) || (shiftBy > 26));
+
+	for (int i = text.length(); i >= 0; i--) {
+		cout << (int)(text[i] + shiftBy) << ' ';
+		if (text[i] != ' ') {
+			text[i] = tolower(text[i]);
+			int position = alphabet.find(text[i]);
+			if (position + shiftBy > 25) {
+				position = position + shiftBy - 26;
+			}
+			else if (position + shiftBy < 0) {
+				position = position + shiftBy + 26;
+			}
+			else {
+				position = position + shiftBy;
+			}
+			text[i] = alphabet[position];
+		}
+	}
+	cout << endl << text << endl;
+	cin.get();
+}
+
 int main(void) {
 	//helloWorld();
 	//WriteOutInt();
@@ -203,6 +235,7 @@ int main(void) {
 	//CalculatorWithSwitch();
 	//ArrayTestAndPointers();
 	//GimmiLineMotherfucker();
-	CesarsCode();
+	//CesarsCode();
+	CesarsCodeV2();
 	return 0;
 }
