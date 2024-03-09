@@ -168,6 +168,22 @@ void GimmiLineMotherfucker() {
 	cin.get();
 }
 
+void CesarsCode() {
+	string text;
+	int shiftBy;
+	cout << "Input text, that you want to convert: ";
+	getline(cin, text);
+	cout << "Enter a number between -26 and 26: ";
+	do {
+		cin >> shiftBy;
+	} while ((shiftBy <= -26) && (shiftBy >= 26));
+	for (int i = text.length(); i >= 0; i--) {
+		text[i] = text[i] + shiftBy;
+	}
+	cout << text << endl;
+	cin.get();
+}
+
 int main(void) {
 	//helloWorld();
 	//WriteOutInt();
@@ -182,6 +198,7 @@ int main(void) {
 	//CalculateSquareRoot();
 	//CalculatorWithSwitch();
 	//ArrayTestAndPointers();
-	GimmiLineMotherfucker();
+	//GimmiLineMotherfucker();
+	CesarsCode();
 	return 0;
 }
