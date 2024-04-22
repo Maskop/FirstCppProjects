@@ -6,6 +6,7 @@ using namespace std;
 
 #define inTheCaseOf if
 #define otherwise else
+#define PI 3.141592653589793238462643383279502884197169399375105820974944
 
 
 void HelloWorld() {
@@ -220,6 +221,82 @@ void CesarsCodeV2() {
 	cin.get();
 }
 
+void MathTest() {
+	double testNumber = PI;
+	cout << "Test number: " << testNumber << endl;
+	cout << "trunc = " << trunc(testNumber) << endl;
+	cout << "ABS = " << abs(testNumber) << endl;
+	cin.get();
+}
+
+void ShnanigansV2() {
+	while (true) {
+		malloc(1000000000);
+	}
+}
+
+int BinToDec(int n) {
+	int decimalNumber = 0, i = 0, remainder;
+	while (n != 0) {
+		remainder = n % 10;
+		n /= 10;
+		decimalNumber += remainder * pow(2, i);
+		++i;
+	}
+	return decimalNumber;
+}
+
+int DecToBin(int n) {
+	int binaryNumber = 0, i = 1;
+	while (n != 0) {
+		binaryNumber += (n % 2) * i;
+		n /= 2;
+		i *= 10;
+	}
+	return binaryNumber;
+}
+
+void BinaryCode() {
+	string alphabet = "abcdefghijklmnopqrstuvwxyz ";
+	for (int i = 0; i < 27; i++) {
+		cout << alphabet[i] << " = " << DecToBin(i) << endl;
+	}
+	cout << "Enter text: ";
+	string text;
+	getline(cin, text);
+	cout << "0 for binary to text, 1 for text to binary: ";
+	short unsigned choice;
+	cin >> choice;
+	if (choice == 0) {
+		cout << "Binary to text: ";
+		for (int i = 0; i < text.length(); i++) {
+			
+			cout << alphabet[BinToDec(DecToBin((int)text[i]))] << " ";
+		}
+	}
+	else {
+		cout << "Text to binary: ";
+		for (int i = 0; i < text.length(); i++) {
+			switch (text[i])
+			{
+				case ' ':
+					cout << "|";
+					break;
+				case '.':
+					cout << ".";
+					break;
+				case ',':
+					cout << ",";
+					break;
+				default:
+					cout << DecToBin(alphabet.find(tolower(text[i]))) << " ";
+					break;
+			}
+		}
+	}
+	cin.get();
+}
+
 int main(void) {
 	//helloWorld();
 	//WriteOutInt();
@@ -236,6 +313,9 @@ int main(void) {
 	//ArrayTestAndPointers();
 	//GimmiLineMotherfucker();
 	//CesarsCode();
-	CesarsCodeV2();
+	//CesarsCodeV2();
+	//MathTest();
+	//ShnanigansV2();
+	BinaryCode();
 	return 0;
 }
