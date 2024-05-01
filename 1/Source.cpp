@@ -229,12 +229,6 @@ void MathTest() {
 	cin.get();
 }
 
-void ShnanigansV2() {
-	while (true) {
-		malloc(1000000000);
-	}
-}
-
 int BinToDec(int n) {
 	int decimalNumber = 0, i = 0, remainder;
 	while (n != 0) {
@@ -257,14 +251,15 @@ int DecToBin(int n) {
 }
 
 void BinaryCode() {
-	string alphabet = "abcdefghijklmnopqrstuvwxyz ";
-	for (int i = 0; i < 27; i++) {
+	string alphabet = "abcdefghijklmnopqrstuvwxyz ,.?!";
+	string alphabet1 = "fgdp,.?hiabj!etylmkqrvwxusnocz ";
+	for (int i = 0; i < alphabet.length(); i++) {
 		cout << alphabet[i] << " = " << DecToBin(i) << endl;
 	}
 	cout << "Enter text: ";
 	string text;
 	getline(cin, text);
-	cout << "0 for binary to text, 1 for text to binary: ";
+	cout << "0 for binary to text, 1 for text to binary, 2 for text to decimal";
 	short unsigned choice;
 	cin >> choice;
 	if (choice == 0) {
@@ -274,7 +269,7 @@ void BinaryCode() {
 			cout << alphabet[BinToDec(DecToBin((int)text[i]))] << " ";
 		}
 	}
-	else {
+	else if (choice == 1) {
 		cout << "Text to binary: ";
 		for (int i = 0; i < text.length(); i++) {
 			switch (text[i])
@@ -294,8 +289,30 @@ void BinaryCode() {
 			}
 		}
 	}
+	else if (choice == 2) {
+		cout << "Text to decimal: ";
+		for (int i = 0; i < text.length(); i++) {
+			switch (text[i])
+			{
+			case ' ':
+				cout << "|";
+				break;
+			case '.':
+				cout << ".";
+				break;
+			case ',':
+				cout << ",";
+				break;
+			default:
+				cout << alphabet.find(tolower(text[i])) << " ";
+				break;
+			}
+		}
+	}
 	cin.get();
 }
+
+
 
 int main(void) {
 	//helloWorld();
