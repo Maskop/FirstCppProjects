@@ -264,9 +264,18 @@ void BinaryCode() {
 	cin >> choice;
 	if (choice == 0) {
 		cout << "Binary to text: ";
+		string sequence = "";
 		for (int i = 0; i < text.length(); i++) {
-			
-			cout << alphabet[BinToDec(DecToBin((int)text[i]))] << " ";
+			if (text[i] == ' ') {
+				cout << alphabet[DecToBin(stoi(sequence))];
+				sequence = "";
+			}
+			else if (text[i] == '|') {
+				cout << " ";
+			}
+			else {
+				sequence += text[i];
+			}
 		}
 	}
 	else if (choice == 1) {
@@ -311,8 +320,6 @@ void BinaryCode() {
 	}
 	cin.get();
 }
-
-
 
 int main(void) {
 	//helloWorld();
